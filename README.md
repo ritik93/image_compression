@@ -10,7 +10,10 @@ We will use the K-means algorithm to select the 16 colors that will be used to r
 * Once we have computed the cluster centroids on the image, we will then use the 16 colors to replace the pixels in the original image.
   
   
-#### Post Image Compression  
+#### Post Image Compression 
+
+The original image required 24 bits for each one of the $128\times128$ pixel locations, resulting in total size of $128 \times 128 \times 24 = 393,216$ bits  
+  
 After successfully using K-Means to have compressed the original image :
 * The new representation requires some overhead storage in form of a dictionary of 16 colors, each of which require 24 bits, but the image itself then only requires 4 bits per pixel location. 
-* The final number of bits used is therefore $16 \times 24 + 128 \times 128 \times 4 = 65,920$ bits
+* The final number of bits used is therefore $16 \times 24 + 128 \times 128 \times 4 = 65,920$ bits, which corresponds to compressing the original image by about a factor of 6.
